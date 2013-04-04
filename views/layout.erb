@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Store Database</title>
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One'
+    rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="navigation">
+      <span class="navigation-link">
+        <a class="home_button" href="<%= @@home_uri %>">Home</a>
+      </span>
+      <span class="navigation-link">
+        <a class="home_button" href="<%= @@users_uri %>">Users</a>
+      </span>
+      <span class="navigation-link">
+        <a class="home_button" href="<%= @@products_uri %>">Products</a>
+      </span>
+    </div>
+    <%= yield %>
+  </body>
+</html>

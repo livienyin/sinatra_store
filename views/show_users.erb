@@ -1,0 +1,14 @@
+<div class="row span6 offset6">
+<table class="table table-striped">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+  </tr>
+  <% @rs.each do |row| %>
+    <tr>
+      <td><%= row['id'] %></td>
+      <td><%= row['name'] %></td>
+    </tr>
+  <% end %>
+</table>
+</div>

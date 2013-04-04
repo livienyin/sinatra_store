@@ -1,0 +1,33 @@
+.navigation {
+    display: block;
+    padding: 25px;
+    text-align: center;
+    line-height: 1;
+}
+
+body {
+    background-color: #D19345;
+}
+
+.center {
+    float: none;
+    margin: auto;
+}
+
+.navigation-link {
+    font-size: 4em;
+    font-family: 'Alfa Slab One', cursive;
+}
+
+table {
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: #1E2B50;
+}
+
+a:hover {
+    text-decoration: none;    
+}
