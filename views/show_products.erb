@@ -18,6 +18,7 @@
       <th>Sale!</th>
       <th>Update</th>
       <th>Remove</th>
+      <th>Search</th>
     </tr>
     <% @rs.each do |row| %>
     <tr>
@@ -41,6 +42,10 @@
         <a href="/products/<%= row['id'] %>/delete">
         <i class="icon-remove"></i>
         </a>
+      </td>
+      <td>
+        <a href="/products/search?q=<%= URI.escape(row['name']) %>">Search
+        Twitter</a>
       </td>
     </tr>
     <% end %>
