@@ -2,13 +2,13 @@
 <h1>Add new product</h1>
 <form action='/products' method='post'>
   <p>
-  <label for='product_name'>Name</label>
-  <input type='text' name ='product_name'/>
+  <input type='text' name='product_name' placeholder='Name'/>
   <p>
-  <label for='product_price'>Price</label>
-  <input type='text' name='product_price'/>
+  <input type='text' name='product_price' placeholder='Price'/>
   <p>
-  <button>Submit!</button>
+  <input type='checkbox' name='on_sale'> On Sale </input>
+  <p>
+  <button class="btn btn-info">Submit</button>
 </form>
 
   <table class="table table-striped">
