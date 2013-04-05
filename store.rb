@@ -20,11 +20,12 @@ get '/' do
   erb :home
 end
 
-post '/new-product' do
+post '/products' do
   name = params[:product_name]
   price = params[:product_price]
   sql = "INSERT INTO products ('name', 'price') VALUES ('#{name}', '#{price}');"
-  @rs = @db.prepare(sql).execute
+  @db.prepare(sql).execute
+  @rs = @db.prepare('SELECT * FROM products;').execute
   @name = name
   @price = price 
   erb :show_products
@@ -58,4 +59,15 @@ post '/products/:id' do
   sql = "SELECT * FROM products WHERE id = '#{@id}';"
   @row = @db.get_first_row(sql)
   erb :product_id
+end
+
+get '/products/:id/delete' do
+  @id = params[:id]  
+  erb :delete_product
+end
+
+post '/products/:id/delete' do
+  sql = "DELETE FROM products WHERE id = #{params[:id]};"
+  @rs = @db.prepare(sql).execute
+  redirect '/products'
 end
