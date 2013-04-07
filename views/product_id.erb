@@ -1,4 +1,5 @@
-<div class="row span6 center">
+<div class="span12 center">
+<div class="row span6 right">
   <table class="table table-striped">
     <tr>
       <th>Product Name</th>
@@ -21,14 +22,20 @@
     </tr>
   </table>
 
-<form action='/products/<%= @row['id'] %>' method='post'>
+<form action='/products/update/<%= @row['id'] %>' method='post'>
   <p>
   <label for='product_name'>Edit Name</label>
   <input type='text' name ='product_name' value="<%= @row['name'] %>"/>
-  <p>
   <label for='product_price'>Edit Price</label>
-  <input type='text' name='product_price' value="<%= @row['price'] %>"/>
+  <input type='text' name='product_price' value="<%= @row['price']
+  %>"/>
+  <p>
+  <input type='checkbox' name='on_sale' value='t'>On Sale</input>
   <p>
   <button class="btn btn-info">Update it!</button>
 </form>
+</div>
+<div class="product_image">
+<img src="<%= @shopping_results['items'][0]['product']['images'][0]['link'] %>">
+</div>
 </div>
