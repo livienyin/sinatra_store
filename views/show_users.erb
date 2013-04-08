@@ -1,15 +1,13 @@
 <div class="row span6 center">
-<table class="table table-hover">
+<table class="table table-bordered table-hover">
   <tr>
     <th>Id</th>
     <th>Name</th>
-    <th>See Wishlist</th>
   </tr>
   <% @rs.each do |row| %>
     <tr>
       <td><%= row['id'] %></td>
       <td><%= row['name'] %></td>
-      <td></td>
     </tr>
   <% end %>
 </table>

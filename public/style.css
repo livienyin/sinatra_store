@@ -68,10 +68,6 @@ th.search {
     padding: 20px;
     font-size: 1.5em;
 }
-
-#twitter_search {
-
-}
  
 input[type="text"] {
     margin-bottom: 0 !important;
@@ -83,7 +79,6 @@ input.price_input {
 
 td.table_icons {
     text-align: center;
-    vertical-align: middle;
 }
 
 .product_image {
@@ -99,3 +94,18 @@ td.table_icons {
     float: right;
 }
 
+.btn-danger {
+    display: block;
+    margin: auto;
+}
+
+.btn-primary {
+    margin-top: 10px;
+}
+
+.delete-window {
+    color: white;
+    padding: 70px;
+    background-color: #242526;
+    border-radius: 10px;
+}
