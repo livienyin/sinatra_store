@@ -3,11 +3,13 @@
   <tr>
     <th>Id</th>
     <th>Name</th>
+    <th>See Wishlist</th>
   </tr>
   <% @rs.each do |row| %>
     <tr>
       <td><%= row['id'] %></td>
       <td><%= row['name'] %></td>
+      <td></td>
     </tr>
   <% end %>
 </table>

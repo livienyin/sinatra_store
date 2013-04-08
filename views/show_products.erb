@@ -3,7 +3,7 @@
   <p>
   <input type='text' name='product_name' placeholder='Name'/>
   <input type='text' name='product_price' placeholder='Price'/>
-  <button class="btn btn-info">Add Item</button>
+  <button class="btn btn-info">Add New Item</button>
   <!--<input type='checkbox' name='on_sale'> On Sale </input>-->
 </form>
 
@@ -11,10 +11,10 @@
     <tr>
       <th>Product Name</th>
       <th>Price</th>
-      <th>Sale!</th>
+      <th>On Sale</th>
       <th>Update</th>
       <th>Remove</th>
-      <th>Twitter Search</th>
+      <th>Tweets</th>
     </tr>
     <% @rs.each do |row| %>
     <tr>
@@ -24,24 +24,24 @@
         </a>
       </td>
       <td><%= row['price'] %></td>
-      <td>
+      <td class="table_icons">
         <% if row['on_sale'] == "t" %>
         <i class="icon-heart"></i>
         <% end %>
       </td>
-      <td>
+      <td class="table_icons">
         <a href="/products/<%= row['id'] %>">
           <i class="icon-pencil"></i>
         </a>
       </td>
-      <td>
+      <td class="table_icons">
         <a href="/products/<%= row['id'] %>/delete">
         <i class="icon-remove"></i>
         </a>
       </td>
-      <td>
+      <td class="table_icons">
         <a href="/products/search?q=<%= URI.escape(row['name']) %>">
-        <i class="icon-circle-arrow-right"></i></a>
+          <i class="icon-search"></i></a>
       </td>
     </tr>
     <% end %>

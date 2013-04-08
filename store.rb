@@ -77,7 +77,7 @@ post '/products/update/:id' do
   sale = params[:on_sale]
   sql = "UPDATE products SET name = '#{name}', price = '#{price}', on_sale = '#{sale}' WHERE id = '#{id}';"
   @db.execute(sql)
-  redirect "/products/#{id}"
+  redirect "/products"
 end
 
 get '/products/:id/delete' do

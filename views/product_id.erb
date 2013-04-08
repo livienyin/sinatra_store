@@ -1,41 +1,48 @@
 <div class="span12 center">
-<div class="row span6 right">
-  <table class="table table-striped">
-    <tr>
-      <th>Product Name</th>
-      <th>Price</th>
-      <th>Sale</th>
-      <th>Delete</th>
-    </tr>
-    <tr>
-      <td><%= @row['name'] %></td>
-      <td><%= @row['price'] %></td>
-      <td><% if @row['on_sale'] == "t" %>
-        <i class="icon-heart"></i>
-        <% end %>
-      </td>
-      <td>
-        <a href="/products/<%= @row['id'] %>/delete">
-          <i class="icon-remove"></i>
-        </a>
-      </td>
-    </tr>
-  </table>
+  <div class="row span6 right">
+    <table class="table table-striped">
+      <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Sale</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+      <form action='/products/update/<%= @row['id'] %>' method='post'>
+        <tr>
+          <td>
+            <input type='text' name ='product_name' value='<%= @row['name'] %>'/>
+          </td>
+          <td>
+            <input class='price_input' type='text' name='product_price'
+                   value="<%= @row['price'] %>">
+          </td>
+          <td class='table_icons'>
+            <input type='checkbox' name='on_sale' value='t'
+                   <% if @row['on_sale'] == 't' %>
+                   checked="true"
+                   <% end %>>
+          </td>
+          <td class='table_icons'>
+            <button class="btn btn-mini">EDIT</button>
+          </td>
+          <td class='table_icons'>
+            <a href="/products/<%= @row['id'] %>/delete">
+              <i class="icon-remove"></i>
+            </a>
+          </td>
+        </tr>
+      </form>
+    </table>
 
-<form action='/products/update/<%= @row['id'] %>' method='post'>
-  <p>
-  <label for='product_name'>Edit Name</label>
-  <input type='text' name ='product_name' value="<%= @row['name'] %>"/>
-  <label for='product_price'>Edit Price</label>
-  <input type='text' name='product_price' value="<%= @row['price']
-  %>"/>
-  <p>
-  <input type='checkbox' name='on_sale' value='t'>On Sale</input>
-  <p>
-  <button class="btn btn-info">Update it!</button>
-</form>
-</div>
-<div class="product_image">
-<img src="<%= @shopping_results['items'][0]['product']['images'][0]['link'] %>">
-</div>
+    <%= @shopping_results['items'][0]['product']['description'] %>
+    <br>
+    <a class="btn btn-success"
+       href="<%= @shopping_results['items'][0]['product']['link'] %>">
+      Buy it
+    </a>
+  </div>
+  <div class="product_image">
+    <img src="<%= @shopping_results['items'][0]['product']['images'][0]['link'] %>">
+  </div>
 </div>
