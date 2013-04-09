@@ -1,0 +1,16 @@
+<div class="span8 center">
+   <table class="table table-striped table-bordered">
+     <tr>
+       <th class="search">Pic</th>
+       <th class="search">
+         <span id="twitter_search">
+           <%= @q %></span> Tweets</th>
+     </tr>
+     <% @results["results"].each do |result| %>
+     <tr>
+       <td><img src="<%= result["profile_image_url"] %>"></td>
+       <td><%= result["text"] %></td>
+     </tr>
+     <% end %>
+   </table>
+</div>

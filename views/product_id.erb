@@ -15,7 +15,7 @@
           </td>
           <td>
             <input class='price_input' type='text' name='product_price'
-                   value="<%= @row['price'] %>">
+                   value="<%= "%.2f" % @row['price'] %>">
           </td>
           <td class='table_icons'>
             <input type='checkbox' name='on_sale' value='t'

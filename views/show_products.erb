@@ -23,7 +23,7 @@
           <%= row['name'] %>
         </a>
       </td>
-      <td><%= row['price'] %></td>
+      <td><%= "%.2f" % row['price'] %></td>
       <td class="table_icons">
         <% if row['on_sale'] == "t" %>
         <i class="icon-heart"></i>

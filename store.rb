@@ -1,6 +1,5 @@
 # gem install --version 1.3.0 sinatra
 require 'pry'
-gem 'sinatra', '1.3.0'
 require 'sinatra'
 require 'sinatra/reloader'
 require 'sqlite3'
@@ -25,7 +24,6 @@ end
 get '/' do
   redirect @@products_uri
 end
-
 
 get '/users' do
   @rs = @db.execute('SELECT * FROM users;')
@@ -80,7 +78,7 @@ post '/products/update/:id' do
   redirect "/products/#{id}"
 end
 
-get '/products/:id/delete' do
+get '/products/:id/delete' do 
   @id = params[:id]  
   erb :delete_product
 end
